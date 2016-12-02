@@ -1,29 +1,23 @@
-﻿using Xamarin.Forms;
+﻿using Prism.Unity;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using AppName5.Views;
 
 namespace AppName5
 {
-	public partial class App : Application
+	public partial class App : PrismApplication
 	{
-		public App()
+		protected override void OnInitialized()
 		{
 			InitializeComponent();
 
-			MainPage = new AppName5Page();
+			NavigationService.NavigateAsync("NavigationPage/MainPage?title=Hello%20from%20Xamarin.Forms");
 		}
 
-		protected override void OnStart()
+		protected override void RegisterTypes()
 		{
-			// Handle when your app starts
-		}
-
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
-
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
+			Container.RegisterTypeForNavigation<NavigationPage>();
+			Container.RegisterTypeForNavigation<MainPage>();
 		}
 	}
 }
