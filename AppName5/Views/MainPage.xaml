@@ -7,7 +7,18 @@
              Title="MainPage">
     
     <StackLayout>
-        <Label Text="mamamamammamamammamamammamamamma" />
-    
+        <Label Text="ListViewできるかな？" />
     </StackLayout>
+    
+    <ListView ItemsSource="{Binding MyItems}">
+        <ListView.RowHeight>
+            <OnPlatform x:TypeArguments="x:Int32" iOS="128" Android="136" />
+        </ListView.RowHeight>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+<!--                <TextCell Text="{Binding Text}" Detail="{Binding Note}" />-->
+                <ImageCell Text="{Binding Text}" Detail="{Binding Note}" ImageSource="{Binding Image}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
