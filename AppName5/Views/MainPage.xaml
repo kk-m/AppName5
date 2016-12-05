@@ -10,7 +10,8 @@
         <Label Text="ListViewできるかな？" />
     </StackLayout>
     
-    <ListView ItemsSource="{Binding MyItems}">
+    <!--  ItemTapped="OnItemTapped"  -->
+    <ListView ItemsSource="{Binding MyItems}" SelectedItem="{Binding SelectedItem.Value, Mode=TwoWay}">
         <ListView.RowHeight>
             <OnPlatform x:TypeArguments="x:Int32" iOS="128" Android="136" />
         </ListView.RowHeight>

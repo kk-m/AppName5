@@ -18,6 +18,7 @@ namespace AppName5
 		{
 			Container.RegisterTypeForNavigation<NavigationPage>();
 			Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<DetailPage>();
 		}
 	}
 }
