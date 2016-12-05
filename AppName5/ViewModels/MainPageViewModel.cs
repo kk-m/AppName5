@@ -3,6 +3,7 @@ using System.Reactive.Linq;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Reactive.Bindings;
+using Xamarin.Forms;
 //using AppName5.Models;
 
 namespace AppName5.ViewModels
@@ -19,6 +20,9 @@ namespace AppName5.ViewModels
 			MyItems.Add(new MyItem { Text = "text1", Note = "note1", Image = "mine1.png" });
 			MyItems.Add(new MyItem { Text = "text2", Note = "note2", Image = "mine2.png" });
 			MyItems.Add(new MyItem { Text = "text3", Note = "note3", Image = "mine3.png" });
+
+			var red = new Label { Text = "Red", BackgroundColor = Color.Transparent };
+
 
 
 			// アイテムタップ時の動作を定義 Where= System.Reactive.Linq;
