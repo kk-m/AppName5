@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Reactive.Bindings;
@@ -11,7 +13,30 @@ namespace AppName5.ViewModels
 	public class MainPageViewModel : BindableBase
 	{
 		// ObservableCollection
-		public ReactiveCollection<MyItem> MyItems { get; } = new ReactiveCollection<MyItem>();
+		// ListViewのデータ
+		public ReactiveCollection<MyItem> MyItems { get; private set; } = new ReactiveCollection<MyItem>();
+
+		// ListView.IsRefreshingと同期させるプロパティ
+		private bool isRefreshing;
+		public bool IsRefreshing
+		{
+			get { return isRefreshing; }
+			set
+			{
+				if (value == isRefreshing)
+					return;
+				isRefreshing = value;
+				OnPropertyChanged();
+			}
+		}
+
+		// ListViewを引っ張った時に実行させるコマンド
+		public ICommand RefreshCommand
+		{
+			get;
+			private set;
+		}
+
 
 		public ReactiveProperty<MyItem> SelectedItem { get; } = new ReactiveProperty<MyItem>();
 
@@ -21,8 +46,25 @@ namespace AppName5.ViewModels
 			MyItems.Add(new MyItem { Text = "text2", Note = "note2", Image = "mine2.png" });
 			MyItems.Add(new MyItem { Text = "text3", Note = "note3", Image = "mine3.png" });
 
-			var red = new Label { Text = "Red", BackgroundColor = Color.Transparent };
+			//var red = new Label { Text = "Red", BackgroundColor = Color.Transparent };
 
+			var random = new Random(140);
+
+			RefreshCommand = new Command(async (nothing) =>
+			{
+				// ランダムに更新
+				for (var i = 0; i < MyItems.Count; i++)
+				{
+					await Task.Delay(100);
+					MyItems[i] = new MyItem { Text = "text" + random.Next().ToString() , Note = "note" + random.Next().ToString(), Image = "mine1.png" };
+				}
+
+				// Binding機構経由でListViewのIsRefreshingプロパティも変更する
+				IsRefreshing = false;
+			},
+				// ICommand.CanExecuteにもバインドしたプロパティを利用できる
+				(nothing) => !IsRefreshing
+			);
 
 
 			// アイテムタップ時の動作を定義 Where= System.Reactive.Linq;

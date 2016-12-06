@@ -11,7 +11,14 @@
     </StackLayout>
     
     <!--  ItemTapped="OnItemTapped"  -->
-    <ListView ItemsSource="{Binding MyItems}" SelectedItem="{Binding SelectedItem.Value, Mode=TwoWay}">
+    <ListView
+        ItemsSource="{Binding MyItems}"
+        SelectedItem="{Binding SelectedItem.Value, Mode=TwoWay}"
+        IsPullToRefreshEnabled="true"
+        SeparatorVisibility="None"
+        RefreshCommand="{Binding RefreshCommand}"
+        IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+        >
         <ListView.RowHeight>
             <OnPlatform x:TypeArguments="x:Int32" iOS="128" Android="136" />
         </ListView.RowHeight>
