@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              x:Class="AppName5.Views.DetailPage"
              Title="DetailPage">
     
@@ -44,6 +45,11 @@
         
         <StackLayout HeightRequest="200">
             <Label Text="Let's Play Minecraft" />
+            
+            <controls:ImageButton BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Image="icon" Orientation="ImageToRight" ImageHeightRequest="50" ImageWidthRequest="50" />
+            
+            <controls:ImageButton BackgroundColor="#01abdf" TextColor="#ffffff" HeightRequest="75" WidthRequest="175" Image="icon" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50" />
+
         </StackLayout>
 <!--
                     
