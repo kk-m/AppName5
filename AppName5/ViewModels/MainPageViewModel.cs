@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -50,13 +51,30 @@ namespace AppName5.ViewModels
 
 			var random = new Random(140);
 
+			var cout = random.Next(1, 30);
+			Debug.WriteLine("cout = " + cout);
+
 			RefreshCommand = new Command(async (nothing) =>
 			{
-				// ランダムに更新
-				for (var i = 0; i < MyItems.Count; i++)
+				MyItems.Clear();
+
+				// ランダムに更新 MyItems.Count
+				for (var i = 0; i < cout; i++)
 				{
 					await Task.Delay(100);
-					MyItems[i] = new MyItem { Text = "text" + random.Next().ToString() , Note = "note" + random.Next().ToString(), Image = "mine1.png" };
+					//MyItems[i] = new MyItem { 
+					//	Text = "text" + random.Next().ToString(),
+					//	Note = "note" + random.Next().ToString(),
+					//	Image = "mine" + random.Next(1,4).ToString() + ".png" };
+
+					var item = new MyItem
+					{
+						Text = "text" + (i + 1),
+						Note = "note" + (i + 1),
+						Image = "mine" + random.Next(1, 4).ToString() + ".png"
+					};
+
+					MyItems.Add(item);
 				}
 
 				// Binding機構経由でListViewのIsRefreshingプロパティも変更する
