@@ -159,6 +159,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Images\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -171,6 +172,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Controls\MyEntryRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\mine1.png" />
