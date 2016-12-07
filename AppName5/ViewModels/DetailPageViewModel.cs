@@ -53,6 +53,22 @@ namespace AppName5.ViewModels
 			set { SetProperty(ref image, value); }
 		}
 
+
+		private double _numDouble = 10.0;
+		public double NumDouble
+		{
+			get { return _numDouble; }
+			set { SetProperty(ref _numDouble, value); }
+		}
+
+		private int _numInt = 0;
+		public int NumInt
+		{
+			get { return _numInt; }
+			set { SetProperty(ref _numInt, value); }
+		}
+
+
 		public DetailPageViewModel()
 		{
 			// TODO: ViewModelからじゃだめなんかな？いやわからんぞー

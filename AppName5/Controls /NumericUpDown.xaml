@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppName5.Controls.NumericUpDown">
+             
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Text="↓DOWN" Clicked="OnDownClicked" />
+        <Label Grid.Column="1" x:Name="valueLabel" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+        <Button Grid.Column="2" Text="↑UP" Clicked="OnUpClicked" />
+    </Grid>
+    
+</ContentView>
