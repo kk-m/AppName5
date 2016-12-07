@@ -51,12 +51,12 @@ namespace AppName5.ViewModels
 
 			var random = new Random(140);
 
-			var cout = random.Next(1, 30);
-			Debug.WriteLine("cout = " + cout);
-
 			RefreshCommand = new Command(async (nothing) =>
 			{
 				MyItems.Clear();
+
+				var cout = random.Next(1, 30);
+				Debug.WriteLine("cout = " + cout);
 
 				// ランダムに更新 MyItems.Count
 				for (var i = 0; i < cout; i++)
