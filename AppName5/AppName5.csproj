@@ -60,6 +60,7 @@
     <Compile Include="Controls \NumericUpDown.xaml.cs">
       <DependentUpon>NumericUpDown.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls \MyEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

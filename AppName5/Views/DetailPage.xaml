@@ -78,7 +78,8 @@
 
             <controls:ImageButton BackgroundColor="#01abdf" TextColor="#ffffff" HeightRequest="75" WidthRequest="175" Image="icon" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50" />
 -->
-            <Entry IsPassword="true" Placeholder="Password" TextColor="Red"></Entry>
+            <Entry IsPassword="true" Placeholder="Password" TextColor="Red" />
+            <controls2:MyEntry Text="In Shared Code" />
 
             <Frame>
                 <StackLayout>
