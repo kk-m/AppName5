@@ -7,35 +7,36 @@
              xmlns:controls2="clr-namespace:AppName5.Controls;assembly=AppName5"
              x:Class="AppName5.Views.DetailPage"
              Title="DetailPage">
-    
+
 <!--    <StackLayout>-->
+<ScrollView>
     <StackLayout Padding="10" BackgroundColor="#88AACF53">
 
 <!--            <Frame>-->
 <!--                <AbsoluteLayout>-->
-                    
+
         <StackLayout BackgroundColor="#ffffff">
             <Label Text="{Binding Text}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
             <Label Text="{Binding Note}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
-            
+
             <AbsoluteLayout Padding="10">
                 <Image Source="{Binding Image}"
                        HeightRequest="200"
                        Aspect="AspectFit"
                        AbsoluteLayout.LayoutFlags="PositionProportional"
                        AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize" />
-                
+
 <!--
                 <Button Image="like"
                         BackgroundColor="Transparent"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"/>
 -->
-                
+
                 <StackLayout x:Name="button"
                              AbsoluteLayout.LayoutFlags="All"
                              AbsoluteLayout.LayoutBounds="1, 1, 0.5, 0.5">
-                             
+
                     <AbsoluteLayout>
                         <Image x:Name="likeBig"
                                Source="like_big_off.png"
@@ -46,9 +47,9 @@
                                AbsoluteLayout.LayoutFlags="PositionProportional"
                                AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"/>
                     </AbsoluteLayout>
- 
+
                 </StackLayout>
-                
+
 <!--
                 <Image Source="like_big_off.png"
                        AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -59,7 +60,7 @@
                        AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"/>
 -->
 
-                
+
 
 
             </AbsoluteLayout>
@@ -68,16 +69,30 @@
                     <Label Text="{Binding Note}" />
             -->
         </StackLayout>
-        
-        <StackLayout HeightRequest="200">
+
+        <StackLayout>
             <Label Text="Let's Play Minecraft" />
-            
+
 <!--
             <controls:ImageButton BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Image="icon" Orientation="ImageToRight" ImageHeightRequest="50" ImageWidthRequest="50" />
-            
+
             <controls:ImageButton BackgroundColor="#01abdf" TextColor="#ffffff" HeightRequest="75" WidthRequest="175" Image="icon" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50" />
 -->
-        
+
+            <Frame>
+                <StackLayout>
+                    <Label Text="{Binding NumDouble, StringFormat='NumDouble = {0:F1}'}" TextColor="Green" HorizontalOptions="CenterAndExpand" />
+                    <controls2:NumericUpDown Value="{Binding NumDouble}" />
+                </StackLayout>
+            </Frame>
+
+            <Frame>
+                <StackLayout>
+                    <Label Text="{Binding NumDouble, StringFormat='NumDouble = {0:F1}'}" TextColor="Green" HorizontalOptions="CenterAndExpand" />
+                    <controls2:NumericUpDown Value="{Binding NumDouble}" />
+                </StackLayout>
+            </Frame>
+
             <Frame>
                 <StackLayout>
                     <Label Text="{Binding NumDouble, StringFormat='NumDouble = {0:F1}'}" TextColor="Green" HorizontalOptions="CenterAndExpand" />
@@ -87,35 +102,35 @@
 
         </StackLayout>
 <!--
-                    
+
                 <BoxView Color="#88D3381C"
                          AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0.5, 0, 1, 0.25"/>
- 
-                    
+
+
                 </AbsoluteLayout>
 -->
 <!--            </Frame>-->
-            
+
 <!--
-            <Label Text="中心に配置" 
+            <Label Text="中心に配置"
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"/>
 -->
-            
+
 <!--
             <BoxView Color="#88AACF53"
                  AbsoluteLayout.LayoutFlags="All"
-                 AbsoluteLayout.LayoutBounds="0.5, 1, 1, 0.25"/> 
+                 AbsoluteLayout.LayoutBounds="0.5, 1, 1, 0.25"/>
             <Label Text="Let's Play Minecraft."
                    AbsoluteLayout.LayoutBounds="0.5,1,AutoSize,AutoSize"
                    AbsoluteLayout.LayoutFlags="All"
                    LineBreakMode="WordWrap" />
 -->
 
-        
-            
+
+
     </StackLayout>
     <!--    </AbsoluteLayout>-->
-
+    </ScrollView>
 </ContentPage>
