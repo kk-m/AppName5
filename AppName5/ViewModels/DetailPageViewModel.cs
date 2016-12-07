@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Windows.Input;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Xamarin.Forms;
@@ -52,9 +53,14 @@ namespace AppName5.ViewModels
 			set { SetProperty(ref image, value); }
 		}
 
-
 		public DetailPageViewModel()
 		{
+			// TODO: ViewModelからじゃだめなんかな？いやわからんぞー
+			//var button = FindByName<StackLayout>("button");
+
+
+			//StackLayout im = (StackLayout) //button;
+
 			//Debug.WriteLine("** 2: Text = " + Text);
 			//Debug.WriteLine("** 2: Note = " + Note);
 			//Debug.WriteLine("** 2: Title = " + Title);
