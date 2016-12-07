@@ -43,9 +43,10 @@ namespace AppName5.ViewModels
 
 		public MainPageViewModel(INavigationService navigationService)
 		{
-			MyItems.Add(new MyItem { Text = "text1", Note = "note1", Image = "mine1.png" });
-			MyItems.Add(new MyItem { Text = "text2", Note = "note2", Image = "mine2.png" });
-			MyItems.Add(new MyItem { Text = "text3", Note = "note3", Image = "mine3.png" });
+			MyItems.Add(new MyItem { Text = "text1", Note = "note1", Image = "AppName5.Images." + "mine1.png" });
+			MyItems.Add(new MyItem { Text = "text2", Note = "note2", Image = "AppName5.Images." + "mine2.png" });
+			MyItems.Add(new MyItem { Text = "text3", Note = "note3", Image = "AppName5.Images." + "mine3.png" });
+			MyItems.Add(new MyItem { Text = "text4", Note = "note4", Image = "AppName5.Images." + "mine4.png" });
 
 			//var red = new Label { Text = "Red", BackgroundColor = Color.Transparent };
 
@@ -71,7 +72,7 @@ namespace AppName5.ViewModels
 					{
 						Text = "text" + (i + 1),
 						Note = "note" + (i + 1),
-						Image = "mine" + random.Next(1, 4).ToString() + ".png"
+						Image = "AppName5.Images." + "mine" + random.Next(1, 6).ToString() + ".png"
 					};
 
 					MyItems.Add(item);

@@ -150,9 +150,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\gg.png" />
-    <AndroidResource Include="Resources\drawable\mine1.png" />
-    <AndroidResource Include="Resources\drawable\mine2.png" />
-    <AndroidResource Include="Resources\drawable\mine3.png" />
     <AndroidResource Include="Resources\drawable\like_big_on.png" />
     <AndroidResource Include="Resources\drawable\like_button.xml" />
     <AndroidResource Include="Resources\drawable\like_big_off.png" />

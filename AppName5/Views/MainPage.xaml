@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+			 xmlns:local="clr-namespace:AppName5;assembly=AppName5"
+			 xmlns:cv="clr-namespace:AppName5.Converters;assembly=AppName5"
              x:Class="AppName5.Views.MainPage"
              Title="MainPage">
-    
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<cv:ImageSourceConverter x:Key="ImageSourceConverter"/>
+	    </ResourceDictionary>
+	</ContentPage.Resources>
+   
     <StackLayout>
         <Label Text="ListViewできるかな？" />
     </StackLayout>
@@ -25,8 +32,13 @@
         <ListView.ItemTemplate>
             <DataTemplate>
 <!--                <TextCell Text="{Binding Text}" Detail="{Binding Note}" />-->
-                <ImageCell Text="{Binding Text}" Detail="{Binding Note}" ImageSource="{Binding Image}" />
+                <ImageCell Text="{Binding Text}" Detail="{Binding Note}" ImageSource="{Binding Image, Converter={StaticResource ImageSourceConverter}}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
 </ContentPage>
+
+<!--                <ImageCell Text="{Binding Text}" Detail="{Binding Note}" ImageSource="{local:ImageResource AppName5.Images.mine5.png}" />-->
+
+<!--<Image Source="{local:ImageResource EvDrivingEstimator.Resources.Images.image_splash.jpg}" />-->
+  

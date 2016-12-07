@@ -5,8 +5,14 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              xmlns:controls2="clr-namespace:AppName5.Controls;assembly=AppName5"
+			 xmlns:cv="clr-namespace:AppName5.Converters;assembly=AppName5"
              x:Class="AppName5.Views.DetailPage"
              Title="DetailPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<cv:ImageSourceConverter x:Key="ImageSourceConverter"/>
+	    </ResourceDictionary>
+	</ContentPage.Resources>
 
 <!--    <StackLayout>-->
 <ScrollView>
@@ -20,7 +26,7 @@
             <Label Text="{Binding Note}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
 
             <AbsoluteLayout Padding="10">
-                <Image Source="{Binding Image}"
+                <Image Source="{Binding Image, Converter={StaticResource ImageSourceConverter}}"
                        HeightRequest="200"
                        Aspect="AspectFit"
                        AbsoluteLayout.LayoutFlags="PositionProportional"

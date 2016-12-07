@@ -175,9 +175,6 @@
     <Compile Include="Controls\MyEntryRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\mine1.png" />
-    <BundleResource Include="Resources\mine2.png" />
-    <BundleResource Include="Resources\mine3.png" />
     <BundleResource Include="Resources\like_big_on.png" />
     <BundleResource Include="Resources\like_big_off.png" />
     <BundleResource Include="Resources\like.png" />
