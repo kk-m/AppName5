@@ -86,8 +86,20 @@
 -->
             <Entry IsPassword="true" Placeholder="Password" TextColor="Red" />
             <controls2:MyEntry Text="かすたむれんだらー。" />
+				
+			<Button Text="Twetter Login" Command="{Binding TwetterLoginCommand}" />
+				
+            <Entry Text="{Binding NewItemsText.Value}" Placeholder="pin" TextColor="Red" />
+			<Button Text="Twetter Token" Command="{Binding TwetterTokenCommand}" />
 
-            <Frame>
+            <Entry Text="{Binding TweetText.Value}" Placeholder="tweet" TextColor="Red" />
+			<Button Text="Tweet" Command="{Binding TweetCommand}" />
+
+				<Button Text="T" BackgroundColor="Aqua" Command="{Binding TCommand}" />
+
+				<Button Text="Xamarin.Auth" BackgroundColor="Olive" Command="{Binding XACommand}" />
+
+				<Frame>
                 <StackLayout>
                     <Label Text="{Binding NumDouble, StringFormat='NumDouble = {0:F1}'}" TextColor="Green" HorizontalOptions="CenterAndExpand" />
                     <controls2:NumericUpDown Value="{Binding NumDouble}" />

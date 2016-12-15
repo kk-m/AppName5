@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Reactive.Bindings;
@@ -37,7 +38,6 @@ namespace AppName5.ViewModels
 			get;
 			private set;
 		}
-
 
 		public ReactiveProperty<MyItem> SelectedItem { get; } = new ReactiveProperty<MyItem>();
 
